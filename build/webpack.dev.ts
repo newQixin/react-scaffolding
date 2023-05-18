@@ -13,6 +13,7 @@ const port = '8082';
 
 const devConfig: Configuration = merge(baseConfig, {
   mode: 'development',
+  stats: 'errors-only',
   devtool: 'eval-cheap-module-source-map',
   devServer: {
     host,
@@ -24,7 +25,7 @@ const devConfig: Configuration = merge(baseConfig, {
     static: {
       directory: path.join(__dirname, '../public') // 访问public静态资源
     },
-    headers: {"Access-Control-Allow-Origin": "*" }
+    headers: {"Access-Control-Allow-Origin": "*" },
   }
 })
 
